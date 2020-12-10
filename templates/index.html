@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIP Project</title>
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css"  rel="stylesheet">
+    <link href="../static/toastr/toastr.min.css"  rel="stylesheet">
+    <link href="../static/index.css"  rel="stylesheet">
+</head>
+<body>
+<div id="overlay">
+         <!--Loader Stuff -->
+  <div class="loader"></div>
+    </div>
+
+<div class="container">
+    <div class="btn-wrapper">
+        <button class="btn btn-primary top sigma_btn">Sigma Filter</button>
+        <button class="btn btn-primary top knn_btn">KNN</button>
+        <button class="btn btn-primary top both_algo_btn">Compare Both</button>
+    </div>
+
+    <!-- Sigma Filter Browse -->
+    <div class="sigma">
+        <div class="row">
+            <div class="col-md-3">
+                <label>
+                    Please Input Kernal Size
+                    <input class="form-control kernel_size" type="number">
+                </label>
+            </div>
+            <div class="col-md-3">
+                <label>
+                    Please Input The value of 'C'
+                    <input class="form-control c_value" type="number">
+                </label>
+            </div>
+            <div class="col-md-3">
+                <label>
+                    Standard Deviation Method
+                    <select class="form-control std_value">
+                        <option value="0">Implement through Local Standard Deviation</option>
+                        <option value="1">Implement through Global Standard Deviation</option>
+                    </select>
+                </label>
+            </div>
+            <div class="col-md-3">
+                <label></label>
+                <form id="upload-form1" class="upload-form" method="POST"
+                                      enctype="multipart/form-data">
+                                      <div class="mb-2 mr-2">
+                                          <input type="file"  name="file" multiple class="form-control uploadFiles" id="uploadFiles1"></div>
+                                    <div class="mb-2 mr-2" style="float: right; margin: 2%">
+                                        <input type="submit" value="Upload" class="form-control btn-primary">
+                                    </div>
+
+                                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="knn">
+        <div class="row">
+            <div class="col-md-4">
+                <label>
+                    Please input Kernel Size
+                    <input class="form-control kernel_size" type="number">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label>
+                    Please input 'K' value
+                    <input class="form-control k_value" type="number" value="0">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label></label>
+                <form id="upload-form2" class="upload-form" method="POST"
+                                      enctype="multipart/form-data">
+                                      <div class="mb-2 mr-2">
+                                          <input type="file"  name="file" multiple class="form-control uploadFiles" id="uploadFiles2"></div>
+                                    <div class="mb-2 mr-2" style="float: right; margin: 2%">
+                                        <input type="submit" value="Upload" class="form-control btn-primary">
+                                    </div>
+
+                                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="both">
+        <div class="row">
+            <div class="col-md-4">
+                <label>
+                    Kernel Size for Sigma Method
+                    <input class="form-control kernel_size" type="number">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label>
+                    Please Input The value of 'C'
+                    <input class="form-control c_value" type="number">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label>
+                    Standard Deviation Method
+                    <select class="form-control std_value">
+                        <option value="0">Implement through Local Standard Deviation</option>
+                        <option value="1">Implement through Global Standard Deviation</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>
+                    Kernel Size for KNN Method
+                    <input class="form-control kernel_size" type="number">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label>
+                    Please input 'K' value
+                    <input class="form-control k_value" type="number" value="0">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label></label>
+                <form id="upload-form3" class="upload-form" method="POST"
+                                      enctype="multipart/form-data">
+                                      <div class="mb-2 mr-2">
+                                          <input type="file"  name="file" multiple class="form-control uploadFiles" id="uploadFiles3"></div>
+                                    <div class="mb-2 mr-2" style="float: right; margin: 2%">
+                                        <input type="submit" value="Upload" class="form-control btn-primary">
+                                    </div>
+
+                                </form>
+            </div>
+        </div>
+<!--        <div class="row">-->
+<!--            <div class="col-md-8"></div>-->
+<!--            <div class="col-md-4">-->
+<!--                <form id="upload-form3" class="upload-form" method="POST"-->
+<!--                                      enctype="multipart/form-data">-->
+<!--                                      <div class="mb-2 mr-2">-->
+<!--                                          <input type="file"  name="file" multiple class="form-control uploadFiles" id="uploadFiles3"></div>-->
+<!--                                    <div class="mb-2 mr-2" style="float: right; margin: 2%">-->
+<!--                                        <input type="submit" value="Upload" class="form-control btn-primary">-->
+<!--                                    </div>-->
+
+<!--                                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4 i_image">
+
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4 o_image">
+
+        </div>
+    </div>
+<!--    <div class="o_image">-->
+<!--    </div>-->
+
+
+</div>
+
+
+
+<script src="../static/vendor/jquery/jquery.min.js"></script>
+<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/toastr/toastr.min.js"></script>
+<script src="../static/index.js"></script>
+</body>
+</html>

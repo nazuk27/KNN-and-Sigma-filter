@@ -1,0 +1,55 @@
+.btn-wrapper {
+    text-align: center;
+}
+
+.top{
+    margin: 1rem;
+}
+
+.sigma{
+    margin: 2%;
+}
+
+.both{
+    display: none;
+}
+
+.knn{
+    display: none;
+}
+
+.sigma{
+    display: none;
+}
+
+/*Style for loader*/
+.loader {
+    z-index: 99999 !important;
+    position: absolute;
+    display: block;
+     width: 100%;
+    height: 100%;
+    background: url('../static/source.gif') no-repeat center center;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#overlay{
+    background: #e9e9e9;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: 999999 !important;
+}
