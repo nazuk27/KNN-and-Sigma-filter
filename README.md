@@ -8,4 +8,4 @@ Instructions:
 2. Input the desired image.
 3. Click on Upload and see the output
 
-Developed by:	[Nazish Khan] (https://github.com/nazuk27)
+Developed by:	[Nazish Khan](https://github.com/nazuk27)
